@@ -1,0 +1,40 @@
+{
+    "name": "grunt-localhosts",
+    "description": "Change your local machine hosts",
+    "version": "0.0.1",
+    "homepage": "https://github.com/materliu/grunt-localhosts",
+    "author": {
+        "name": "materliu",
+        "url": "http://materliu.github.com"
+    },
+    "contributors": [
+        {
+            "name": "materliu",
+            "email": "materliu@gmail.com",
+            "url": "http://materliu.github.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/materliu/grunt-localhosts.git"
+    },
+    "scripts": {
+        "test": "./node_modules/mocha/bin/mocha -R spec ./tests"
+    },
+    "bugs": {
+        "url": "https://github.com/materliu/grunt-localhosts/issues"
+    },
+    "engines": {
+        "node": "*"
+    },
+    "main": "grunt-localhosts.js",
+    "devDependencies": {
+        "grunt": "~0.4.0",
+        "mocha": "~1.15.1"
+    },
+    "keywords": [
+        "gruntplugin",
+        "localhosts",
+        "hosts"
+    ]
+}
