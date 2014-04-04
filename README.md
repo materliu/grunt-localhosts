@@ -1,4 +1,4 @@
-# grunt-localhosts v0.0.1 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/hostile) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/hostile)
+# grunt-localhosts v0.0.1 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/grunt-localhosts) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/grunt-localhosts)
 
 > Change your local machine hosts.
 
@@ -25,12 +25,12 @@ grunt.loadNpmTasks('grunt-localhosts');
 ## change localhosts task
 _Run this task with the `grunt localhosts` command._
 
-This task was designed to be used in conjunction with another task `grunt server` which open local server binds on localhosts 127.0.0.1, but if your page requests some cgi server for example `cgi.qun.qq.com`, the Same-Origin Policy will not allow you do this by localhosts. At the time you can change your local hosts file `127.0.0.1 qun.qq.com`, then you can access the cgi server by CORS just simply open you local pages at "qun.qq.com/index.html", by the way, change the `grunt connect` open page url "qun.qq.com" not localhost !
+This task was designed to be used in conjunction with another task `grunt server` which open local server binds on localhosts 127.0.0.1, but if your page requests some cgi server for example `cgi.qun.qq.com`, the Same-Origin Policy will not allow you do this by localhosts. At the time you can change your local hosts file `127.0.0.1 qun.qq.com`, then you can access the cgi server by CORS just simply open you local pages at "qun.qq.com/index.html", by the way, change the `grunt connect` open page to url "qun.qq.com" not localhost !
 ### Options
 
 #### rules
 Type: `Array`
-Default: `no default`
+Default: `empty array'
 
 just statement which localhost you want to set or remove !
 
