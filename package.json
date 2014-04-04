@@ -27,9 +27,11 @@
     "engines": {
         "node": "*"
     },
-    "main": "grunt-localhosts.js",
+    "main": "Gruntfile.js",
     "devDependencies": {
         "grunt": "~0.4.0",
+        "split": "*",
+        "through": "*",
         "mocha": "~1.15.1"
     },
     "keywords": [

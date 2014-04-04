@@ -85,7 +85,7 @@ module.exports = function (grunt) {
      * @param  {function(Error)} cb
      */
     var remove = function (ip, host, cb) {
-        exports.get(true, function (err, lines) {
+        get(true, function (err, lines) {
 
             // Try to remove entry, if it exists
             lines = lines.filter(function (line) {
@@ -128,15 +128,34 @@ module.exports = function (grunt) {
             var done = this.async(),
                 options = this.options();
 
+            grunt.log.writeln('ready to change localhost !');
+
             if (options.rules && options.rules[0]) {
                 options.rules.forEach(function (value) {
                     var ip = value.ip;
                     var hostname = value.hostname;
-                    set(ip, hostname, function () {
-                        grunt.log.writeln('Changing localhost' + hostname + ' -> ' + ip);
-                        done();
-                    });
+                    var type = value.type || 'set';
+
+                    switch (type) {
+                        case "set":
+                            set(ip, hostname, function () {
+                                grunt.log.writeln('set localhost ' + hostname + ' -> ' + ip);
+                                done();
+                            });
+                            break;
+
+                        case "remove":
+                            remove(ip, hostname, function () {
+                                grunt.log.writeln('remove localhost ' + hostname + ' -> ' + ip);
+                                done();
+                            });
+                            break;
+                    }
+
+
                 });
+            } else {
+                done();
             }
         }
     );
