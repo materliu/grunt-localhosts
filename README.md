@@ -1,4 +1,4 @@
-# grunt-localhosts v0.0.1 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/grunt-localhosts) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/grunt-localhosts)
+# grunt-localhosts v0.0.2 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/grunt-localhosts) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/grunt-localhosts)
 
 > Change your local machine hosts.
 
@@ -96,6 +96,7 @@ grunt.registerTask('build', [
 
 ## Release History
 
+ * 2012-04-08   v0.0.2   Work in progress, not yet officially released, just add some necessary node_modules !
  * 2012-04-04   v0.0.1   Work in progress, not yet officially released.
 
 ---

@@ -1,7 +1,7 @@
 {
     "name": "grunt-localhosts",
     "description": "Change your local machine hosts",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "homepage": "https://github.com/materliu/grunt-localhosts",
     "author": {
         "name": "materliu",
