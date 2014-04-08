@@ -1,7 +1,7 @@
 {
     "name": "grunt-localhosts",
     "description": "Change your local machine hosts",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "homepage": "https://materliu.github.io/grunt-localhosts",
     "author": {
         "name": "materliu",
@@ -33,6 +33,10 @@
         "split": "*",
         "through": "*",
         "mocha": "~1.15.1"
+    },
+    "dependencies": {
+        "split": "*",
+        "through": "*"
     },
     "keywords": [
         "gruntplugin",
