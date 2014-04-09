@@ -1,4 +1,4 @@
-# grunt-localhosts v0.0.5 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/grunt-localhosts) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/grunt-localhosts)
+# grunt-localhosts v0.0.6 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/grunt-localhosts) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/grunt-localhosts)
 
 > Change your local machine hosts.
 
