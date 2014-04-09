@@ -96,10 +96,20 @@ grunt.registerTask('build', [
 
 ## Release History
 
+ * 2014-04-10   v0.0.6   Add manufacturer info.
  * 2012-04-09   v0.0.5   Bug fix.
  * 2012-04-08   v0.0.3   Officially released.
  * 2012-04-08   v0.0.2   Work in progress, not yet officially released, just add some necessary node_modules !
  * 2012-04-04   v0.0.1   Work in progress, not yet officially released.
+
+
+## About
+grunt-localhosts is an open-source project by [Tencent](http://www.tencent.com/en-us/) which builds on top of [Node.js](https://nodejs.org).
+
+
+## Used by people within <a href="https://github.com/materliu/grunt-localhosts/issues/">(JOIN US)</a>
+![Tencent](http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Tencent_Logo.svg/200px-Tencent_Logo.svg.png)
+
 
 ---
 
