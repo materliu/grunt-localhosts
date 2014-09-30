@@ -123,7 +123,7 @@ module.exports = function (grunt) {
         });
     };
 
-    grunt.registerMultiTask('localhosts', "Change your local machine hosts",
+    grunt.registerMultiTask('localhosts', 'Change your local machine hosts',
         function () {
             var done = this.async(),
                 options = this.options();
@@ -137,14 +137,14 @@ module.exports = function (grunt) {
                     var type = value.type || 'set';
 
                     switch (type) {
-                        case "set":
+                        case 'set':
                             set(ip, hostname, function () {
                                 grunt.log.writeln('set localhost ' + hostname + ' -> ' + ip);
                                 done();
                             });
                             break;
 
-                        case "remove":
+                        case 'remove':
                             remove(ip, hostname, function () {
                                 grunt.log.writeln('remove localhost ' + hostname + ' -> ' + ip);
                                 done();
