@@ -53,26 +53,22 @@ module.exports = function (grunt) {
    * @param  {string}   host
    * @param  {function(Error)} cb
    */
-  var set = function (ip, host, cb) {
-    get(true, function (err, lines) {
-
-      // Try to update entry, if host already exists in file
-      var didUpdate = false;
-      lines = lines.map(function (line) {
-        if (Array.isArray(line) && line[1] === host) {
-          line[0] = ip;
-          didUpdate = true;
-        }
-        return line;
-      });
-
-      // If entry did not exist, let's add it
-      if (!didUpdate) {
-        lines.push([ip, host]);
+  var set = function (lines, ip, host) {
+    // Try to update entry, if host already exists in file
+    var didUpdate = false;
+    lines = lines.map(function (line) {
+      if (Array.isArray(line) && line[1] === host) {
+        line[0] = ip;
+        didUpdate = true;
       }
-
-      writeFile(lines, cb);
+      return line;
     });
+
+    // If entry did not exist, let's add it
+    if (!didUpdate) {
+      lines.push([ip, host]);
+    }
+    return lines;
   };
 
   /**
@@ -83,16 +79,12 @@ module.exports = function (grunt) {
    * @param  {string}   host
    * @param  {function(Error)} cb
    */
-  var remove = function (ip, host, cb) {
-    get(true, function (err, lines) {
-
-      // Try to remove entry, if it exists
-      lines = lines.filter(function (line) {
-        return !(Array.isArray(line) && line[0] === ip && line[1] === host);
-      });
-
-      writeFile(lines, cb);
+  var remove = function (lines, ip, host) {
+    // Try to remove entry, if it exists
+    lines = lines.filter(function (line) {
+      return !(Array.isArray(line) && line[0] === ip && line[1] === host);
     });
+    return lines;
   };
 
   /**
@@ -126,32 +118,36 @@ module.exports = function (grunt) {
     var done = this.async(),
       options = this.options();
 
-    grunt.log.writeln('ready to change localhost !');
+    get(true, function (err, lines) {
+      if (err) {
+        grunt.log.writeln(err);
+      }
+      grunt.log.writeln('Ready to change localhost!\n');
 
-    if (options.rules && options.rules[0]) {
-      options.rules.forEach(function (value) {
-        var ip = value.ip;
-        var hostname = value.hostname;
-        var type = value.type || 'set';
+      if (Array.isArray(options.rules)) {
+        options.rules.forEach(function (value) {
+          var ip = value.ip;
+          var hostname = value.hostname;
+          var type = value.type || 'set';
+          switch (type) {
+            case "set":
+              lines = set(lines, ip, hostname);
+              grunt.log.writeln('Set localhost ' + hostname + ' -> ' + ip);
+              break;
+            case "remove":
+              lines = remove(lines, ip, hostname);
+              grunt.log.writeln('Remove localhost ' + hostname + ' -> ' + ip);
+              break;
+          }
+        });
 
-        switch (type) {
-          case 'set':
-            set(ip, hostname, function () {
-              grunt.log.writeln('set localhost ' + hostname + ' -> ' + ip);
-              done();
-            });
-            break;
-
-          case 'remove':
-            remove(ip, hostname, function () {
-              grunt.log.writeln('remove localhost ' + hostname + ' -> ' + ip);
-              done();
-            });
-            break;
-        }
-      });
-    } else {
-      done();
-    }
+        writeFile(lines, function () {
+          grunt.log.writeln(HOSTS + ' is refreshed');
+          done();
+        });
+      } else {
+        done();
+      }
+    });
   });
 };
