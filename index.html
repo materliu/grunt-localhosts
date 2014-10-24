@@ -39,7 +39,7 @@
         </div>
 
         <h1>
-<a name="grunt-localhosts-v007--" class="anchor" href="#grunt-localhosts-v007--"><span class="octicon octicon-link"></span></a>grunt-localhosts v0.0.7 <a href="https://npmjs.org/package/grunt-localhosts"><img src="http://img.shields.io/npm/v/hostile.svg" alt="NPM Version"></a> <a href="https://npmjs.org/package/grunt-localhosts"><img src="http://img.shields.io/npm/dm/hostile.svg" alt="NPM"></a>
+<a name="grunt-localhosts-v008--" class="anchor" href="#grunt-localhosts-v008--"><span class="octicon octicon-link"></span></a>grunt-localhosts v0.0.8 <a href="https://npmjs.org/package/grunt-localhosts"><img src="http://img.shields.io/npm/v/hostile.svg" alt="NPM Version"></a> <a href="https://npmjs.org/package/grunt-localhosts"><img src="http://img.shields.io/npm/dm/hostile.svg" alt="NPM"></a>
 </h1>
 
 <blockquote>
@@ -53,8 +53,8 @@
 
 <p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:</p>
 
-<pre lang="shell"><code>npm install grunt-localhosts --save-dev
-</code></pre>
+<div class="highlight highlight-shell"><pre>npm install grunt-localhosts --save-dev
+</pre></div>
 
 <p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
 
@@ -103,6 +103,10 @@ Default: `empty array'</p>
                     <span class="nx">ip</span><span class="o">:</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
                     <span class="nx">hostname</span><span class="o">:</span> <span class="s1">'qun.qq.com'</span><span class="p">,</span>
                     <span class="nx">type</span><span class="o">:</span> <span class="s1">'set'</span>
+                <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">ip</span><span class="o">:</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
+                    <span class="nx">hostname</span><span class="o">:</span> <span class="s1">'find.qq.com'</span><span class="p">,</span>
+                    <span class="nx">type</span><span class="o">:</span> <span class="s1">'set'</span>
                 <span class="p">}]</span>
             <span class="p">}</span>
         <span class="p">},</span>
@@ -139,12 +143,16 @@ Default: `empty array'</p>
 <a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
 
 <ul>
+<li>2014-10-24   v0.0.8   Add multiple rules support. thx <a href="https://github.com/NameFILIP" class="user-mention">@NameFILIP</a>
+</li>
 <li>2012-04-10   v0.0.7   Add manufacturer info.</li>
 <li>2012-04-09   v0.0.5   Bug fix.</li>
 <li>2012-04-08   v0.0.3   Officially released.</li>
 <li>2012-04-08   v0.0.2   Work in progress, not yet officially released, just add some necessary node_modules !</li>
 <li>2012-04-04   v0.0.1   Work in progress, not yet officially released.</li>
-</ul><h2>
+</ul>
+
+<h2>
 <a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
 
 <p>grunt-localhosts is an open-source project by <a href="http://www.tencent.com/en-us/">Tencent</a> which builds on top of <a href="https://nodejs.org">Node.js</a>.</p>
@@ -155,7 +163,9 @@ Default: `empty array'</p>
 
 <p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Tencent_Logo.svg/200px-Tencent_Logo.svg.png" alt="Tencent"></p>
 
-<hr><p>Task submitted by <a href="http://materliu.github.com">materliu</a></p>
+<hr>
+
+<p>Task submitted by <a href="http://materliu.github.com">materliu</a></p>
 
 <p><em>This file was generated on Fri Apr 4 2014 22:38:50.</em></p>
       </section>
