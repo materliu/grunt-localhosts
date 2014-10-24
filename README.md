@@ -99,7 +99,7 @@ grunt.registerTask('build', [
 ```
 
 ## Release History
- * 2014-10-24   v0.0.8   Add multiple rules support. thx @NameFILIP
+ * 2014-10-24   v0.0.8   Add multiple rules support. thx @NameFILIP
  * 2012-04-10   v0.0.7   Add manufacturer info.
  * 2012-04-09   v0.0.5   Bug fix.
  * 2012-04-08   v0.0.3   Officially released.
