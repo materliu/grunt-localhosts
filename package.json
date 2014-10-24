@@ -1,7 +1,7 @@
 {
     "name": "grunt-localhosts",
     "description": "Change your local machine hosts",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "homepage": "https://materliu.github.io/grunt-localhosts",
     "author": {
         "name": "materliu",
@@ -11,7 +11,12 @@
         {
             "name": "materliu",
             "email": "materliu@gmail.com",
-            "url": "http://materliu.github.com"
+            "url": "https://materliu.github.com"
+        },
+        {
+        	"name": "Filip Spiridonov",
+        	"email": "filip.spiridonov@gmail.com",
+        	"url": "https://github.com/NameFILIP"
         }
     ],
     "repository": {
