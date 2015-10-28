@@ -53,8 +53,7 @@ module.exports = function (grunt) {
     }
     else if (rule && rule.domain) {
       dns.lookup(rule.domain, function (err, address, family) {
-        console.log(address);
-        cb(err, address && address.length && address[0]);
+        cb(err, address);
       });
     }
     else {
@@ -141,6 +140,15 @@ module.exports = function (grunt) {
       grunt.log.writeln('Ready to change localhost!\n');
 
       if (Array.isArray(options.rules)) {
+        var total = 0;
+        var checkComplete = function () {
+          if (total >= options.rules.length) {
+            writeFile(lines, function () {
+              grunt.log.writeln(HOSTS + ' is refreshed');
+              done();
+            });
+          }
+        };
         options.rules.forEach(function (value) {
           getIp(value, function (err, ip) {
             if (err || !ip) {
@@ -160,13 +168,11 @@ module.exports = function (grunt) {
                   break;
               }
             }
+            total++;
+            checkComplete();
           });
         });
-
-        writeFile(lines, function () {
-          grunt.log.writeln(HOSTS + ' is refreshed');
-          done();
-        });
+        checkComplete();
       } else {
         done();
       }
