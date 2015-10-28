@@ -1,51 +1,52 @@
 {
-    "name": "grunt-localhosts",
-    "description": "Change your local machine hosts",
-    "version": "0.0.8",
-    "homepage": "https://materliu.github.io/grunt-localhosts",
-    "author": {
-        "name": "materliu",
-        "url": "http://materliu.github.com"
+  "name": "grunt-localhosts",
+  "description": "Change your local machine hosts",
+  "version": "0.0.8",
+  "homepage": "https://materliu.github.io/grunt-localhosts",
+  "author": {
+    "name": "materliu",
+    "url": "http://materliu.github.com"
+  },
+  "contributors": [
+    {
+      "name": "materliu",
+      "email": "materliu@gmail.com",
+      "url": "https://materliu.github.com"
     },
-    "contributors": [
-        {
-            "name": "materliu",
-            "email": "materliu@gmail.com",
-            "url": "https://materliu.github.com"
-        },
-        {
-        	"name": "Filip Spiridonov",
-        	"email": "filip.spiridonov@gmail.com",
-        	"url": "https://github.com/NameFILIP"
-        }
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/materliu/grunt-localhosts.git"
-    },
-    "scripts": {
-        "test": "./node_modules/mocha/bin/mocha -R spec ./tests"
-    },
-    "bugs": {
-        "url": "https://github.com/materliu/grunt-localhosts/issues"
-    },
-    "engines": {
-        "node": "*"
-    },
-    "main": "localhosts.js",
-    "devDependencies": {
-        "grunt": "~0.4.0",
-        "split": "*",
-        "through": "*",
-        "mocha": "~1.15.1"
-    },
-    "dependencies": {
-        "split": "*",
-        "through": "*"
-    },
-    "keywords": [
-        "gruntplugin",
-        "localhosts",
-        "hosts"
-    ]
+    {
+      "name": "Filip Spiridonov",
+      "email": "filip.spiridonov@gmail.com",
+      "url": "https://github.com/NameFILIP"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/materliu/grunt-localhosts.git"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -R spec ./tests"
+  },
+  "bugs": {
+    "url": "https://github.com/materliu/grunt-localhosts/issues"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "main": "localhosts.js",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "split": "*",
+    "through": "*",
+    "mocha": "~1.15.1"
+  },
+  "dependencies": {
+    "dns": "^0.2.2",
+    "split": "*",
+    "through": "*"
+  },
+  "keywords": [
+    "gruntplugin",
+    "localhosts",
+    "hosts"
+  ]
 }
