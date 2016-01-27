@@ -8,6 +8,7 @@ module.exports = function (grunt) {
   var fs = require('fs');
   var split = require('split');
   var through = require('through');
+  var dns = require('dns');
 
   const WINDOWS = (process.platform === 'win32');
   const EOL = WINDOWS ? '\r\n' : '\n';
@@ -44,6 +45,20 @@ module.exports = function (grunt) {
         cb(null, lines);
       })
       .on('error', cb);
+  };
+
+  var getIp = function (rule, cb) {
+    if (rule && rule.ip) {
+      cb(null, rule.ip);
+    }
+    else if (rule && rule.domain) {
+      dns.lookup(rule.domain, function (err, address, family) {
+        cb(err, address);
+      });
+    }
+    else {
+      cb("Must specify Ip Address or Domain Name");
+    }
   };
 
   /**
@@ -125,26 +140,39 @@ module.exports = function (grunt) {
       grunt.log.writeln('Ready to change localhost!\n');
 
       if (Array.isArray(options.rules)) {
-        options.rules.forEach(function (value) {
-          var ip = value.ip;
-          var hostname = value.hostname;
-          var type = value.type || 'set';
-          switch (type) {
-            case "set":
-              lines = set(lines, ip, hostname);
-              grunt.log.writeln('Set localhost ' + hostname + ' -> ' + ip);
-              break;
-            case "remove":
-              lines = remove(lines, ip, hostname);
-              grunt.log.writeln('Remove localhost ' + hostname + ' -> ' + ip);
-              break;
+        var total = 0;
+        var checkComplete = function () {
+          if (total >= options.rules.length) {
+            writeFile(lines, function () {
+              grunt.log.writeln(HOSTS + ' is refreshed');
+              done();
+            });
           }
+        };
+        options.rules.forEach(function (value) {
+          getIp(value, function (err, ip) {
+            if (err || !ip) {
+              grunt.log.writeln(err || "Could not determine Ip Address!");
+            }
+            else {
+              var hostname = value.hostname;
+              var type = value.type || 'set';
+              switch (type) {
+                case "set":
+                  lines = set(lines, ip, hostname);
+                  grunt.log.writeln('Set localhost ' + hostname + ' -> ' + ip);
+                  break;
+                case "remove":
+                  lines = remove(lines, ip, hostname);
+                  grunt.log.writeln('Remove localhost ' + hostname + ' -> ' + ip);
+                  break;
+              }
+            }
+            total++;
+            checkComplete();
+          });
         });
-
-        writeFile(lines, function () {
-          grunt.log.writeln(HOSTS + ' is refreshed');
-          done();
-        });
+        checkComplete();
       } else {
         done();
       }
