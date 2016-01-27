@@ -1,4 +1,4 @@
-# grunt-localhosts v0.0.8 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/grunt-localhosts) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/grunt-localhosts)
+# grunt-localhosts v0.0.9 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/grunt-localhosts) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/grunt-localhosts)
 
 > Change your local machine hosts.
 
@@ -36,7 +36,12 @@ just statement which localhost you want to set or remove !
 
 ```js
 rules: [{
-    ip: '127.0.0.1',
+    ip: '127.0.0.1',    // point domain "A" to address "B"
+    hostname: 'qun.qq.com',
+    type: 'set'
+}]
+rules: [{
+    domain: 'baidu.com',    // point domain "A" to domain "B"
     hostname: 'qun.qq.com',
     type: 'set'
 }]
@@ -64,6 +69,10 @@ grunt.initConfig({
                     type: 'set'
                 }, {
                     ip: '127.0.0.1',
+                    hostname: 'find.qq.com',
+                    type: 'set'
+                }, {
+                    domain: 'baidu.com',    // point domain "A" to domain "B"
                     hostname: 'find.qq.com',
                     type: 'set'
                 }]
@@ -99,6 +108,7 @@ grunt.registerTask('build', [
 ```
 
 ## Release History
+ * 2016-01-27   v0.0.9   Add dns lookup support. thx @Filip Spiridonov
  * 2014-10-24   v0.0.8   Add multiple rules support. thx @NameFILIP
  * 2012-04-10   v0.0.7   Add manufacturer info.
  * 2012-04-09   v0.0.5   Bug fix.
@@ -113,6 +123,7 @@ grunt-localhosts is an open-source project by [Tencent](http://www.tencent.com/e
 
 ## Used by people within <a href="https://github.com/materliu/grunt-localhosts/issues/">(JOIN US)</a>
 ![Tencent](http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Tencent_Logo.svg/200px-Tencent_Logo.svg.png)
+![Xiaomi](https://avatars2.githubusercontent.com/u/1309360?v=3&s=200)
 
 
 ---

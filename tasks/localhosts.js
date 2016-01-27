@@ -48,15 +48,15 @@ module.exports = function (grunt) {
   };
 
   var getIp = function (rule, cb) {
-    if (rule && rule.ip) {
-      cb(null, rule.ip);
-    }
-    else if (rule && rule.domain) {
-      dns.lookup(rule.domain, function (err, address, family) {
-        cb(err, address);
-      });
-    }
-    else {
+    if (rule) {
+      if (rule.ip) {
+        cb(null, rule.ip);
+      } else if (rule.domain) {
+        dns.lookup(rule.domain, function (err, address, family) {
+          cb(err, address);
+        });
+      }
+    } else {
       cb("Must specify Ip Address or Domain Name");
     }
   };
