@@ -1,45 +1,26 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Grunt-localhosts by materliu</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/materliu/grunt-localhosts">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/materliu/grunt-localhosts/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/materliu/grunt-localhosts/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+    <section class="page-header">
+      <h1 class="project-name">Grunt-localhosts</h1>
+      <h2 class="project-tagline">one grunt task which can make change to your local host.</h2>
+      <a href="https://github.com/materliu/grunt-localhosts" class="btn">View on GitHub</a>
+      <a href="https://github.com/materliu/grunt-localhosts/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/materliu/grunt-localhosts/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>Grunt-localhosts</h1>
-          <p>one grunt task which can make change to your local host.</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/materliu">materliu</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h1>
-<a name="grunt-localhosts-v008--" class="anchor" href="#grunt-localhosts-v008--"><span class="octicon octicon-link"></span></a>grunt-localhosts v0.0.8 <a href="https://npmjs.org/package/grunt-localhosts"><img src="http://img.shields.io/npm/v/hostile.svg" alt="NPM Version"></a> <a href="https://npmjs.org/package/grunt-localhosts"><img src="http://img.shields.io/npm/dm/hostile.svg" alt="NPM"></a>
+    <section class="main-content">
+      <h1>
+<a id="grunt-localhosts-v010--" class="anchor" href="#grunt-localhosts-v010--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>grunt-localhosts v0.1.0 <a href="https://npmjs.org/package/grunt-localhosts"><img src="http://img.shields.io/npm/v/hostile.svg" alt="NPM Version"></a> <a href="https://npmjs.org/package/grunt-localhosts"><img src="http://img.shields.io/npm/dm/hostile.svg" alt="NPM"></a>
 </h1>
 
 <blockquote>
@@ -47,102 +28,109 @@
 </blockquote>
 
 <h2>
-<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
 
 <p>This plugin requires Grunt <code>~0.4.0</code></p>
 
 <p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:</p>
 
-<div class="highlight highlight-shell"><pre>npm install grunt-localhosts --save-dev
-</pre></div>
+<div class="highlight highlight-source-shell"><pre>npm install grunt-localhosts --save-dev</pre></div>
 
 <p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
 
-<div class="highlight highlight-js"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'grunt-localhosts'</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">grunt</span>.<span class="pl-en">loadNpmTasks</span>(<span class="pl-s"><span class="pl-pds">'</span>grunt-localhosts<span class="pl-pds">'</span></span>);</pre></div>
 
 <h2>
-<a name="change-localhosts-task" class="anchor" href="#change-localhosts-task"><span class="octicon octicon-link"></span></a>change localhosts task</h2>
+<a id="change-localhosts-task" class="anchor" href="#change-localhosts-task" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>change localhosts task</h2>
 
 <p><em>Run this task with the <code>grunt localhosts</code> command.</em></p>
 
 <p>This task was designed to be used in conjunction with another task <code>grunt server</code> which open local server binds on localhosts 127.0.0.1, but if your page requests some cgi server for example <code>cgi.qun.qq.com</code>, the Same-Origin Policy will not allow you do this by localhosts. At the time you can change your local hosts file <code>127.0.0.1 qun.qq.com</code>, then you can access the cgi server by CORS just simply open you local pages at "qun.qq.com/index.html", by the way, change the <code>grunt connect</code> open page to url "qun.qq.com" not localhost !</p>
 
 <h3>
-<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
 
 <h4>
-<a name="rules" class="anchor" href="#rules"><span class="octicon octicon-link"></span></a>rules</h4>
+<a id="rules" class="anchor" href="#rules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>rules</h4>
 
 <p>Type: <code>Array</code>
 Default: `empty array'</p>
 
 <p>just statement which localhost you want to set or remove !</p>
 
-<div class="highlight highlight-js"><pre><span class="nx">rules</span><span class="o">:</span> <span class="p">[{</span>
-    <span class="nx">ip</span><span class="o">:</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
-    <span class="nx">hostname</span><span class="o">:</span> <span class="s1">'qun.qq.com'</span><span class="p">,</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="s1">'set'</span>
-<span class="p">}]</span>
-</pre></div>
+<div class="highlight highlight-source-js"><pre>rules<span class="pl-k">:</span> [{
+    ip<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>127.0.0.1<span class="pl-pds">'</span></span>,    <span class="pl-c">// point domain "A" to address "B"</span>
+    hostname<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>qun.qq.com<span class="pl-pds">'</span></span>,
+    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>set<span class="pl-pds">'</span></span>
+}]
+rules<span class="pl-k">:</span> [{
+    domain<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>baidu.com<span class="pl-pds">'</span></span>,    <span class="pl-c">// point domain "A" to domain "B"</span>
+    hostname<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>qun.qq.com<span class="pl-pds">'</span></span>,
+    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>set<span class="pl-pds">'</span></span>
+}]</pre></div>
 
 <h3>
-<a name="usage-examples" class="anchor" href="#usage-examples"><span class="octicon octicon-link"></span></a>Usage examples</h3>
+<a id="usage-examples" class="anchor" href="#usage-examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage examples</h3>
 
 <h4>
-<a name="basic-use" class="anchor" href="#basic-use"><span class="octicon octicon-link"></span></a>Basic Use</h4>
+<a id="basic-use" class="anchor" href="#basic-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Use</h4>
 
 <p>In this example, <code>grunt localhosts</code> (or more verbosely, <code>grunt localhosts:set</code>) will change your localhosts as you wish, obviously you can use 'grunt localhosts:remove' too.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="c1">// Project configuration.</span>
-<span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
-    <span class="nx">localhosts</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">set</span> <span class="o">:</span> <span class="p">{</span>
-            <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">rules</span><span class="o">:</span> <span class="p">[{</span>
-                    <span class="nx">ip</span><span class="o">:</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
-                    <span class="nx">hostname</span><span class="o">:</span> <span class="s1">'qun.qq.com'</span><span class="p">,</span>
-                    <span class="nx">type</span><span class="o">:</span> <span class="s1">'set'</span>
-                <span class="p">},</span> <span class="p">{</span>
-                    <span class="nx">ip</span><span class="o">:</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
-                    <span class="nx">hostname</span><span class="o">:</span> <span class="s1">'find.qq.com'</span><span class="p">,</span>
-                    <span class="nx">type</span><span class="o">:</span> <span class="s1">'set'</span>
-                <span class="p">}]</span>
-            <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="nx">remove</span> <span class="o">:</span> <span class="p">{</span>
-            <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">rules</span><span class="o">:</span> <span class="p">[{</span>
-                    <span class="nx">ip</span><span class="o">:</span> <span class="s1">'127.0.0.1'</span><span class="p">,</span>
-                    <span class="nx">hostname</span><span class="o">:</span> <span class="s1">'qun.qq.com'</span><span class="p">,</span>
-                    <span class="nx">type</span><span class="o">:</span> <span class="s1">'remove'</span>
-                <span class="p">}]</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-<span class="p">});</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// Project configuration.</span>
+<span class="pl-smi">grunt</span>.<span class="pl-en">initConfig</span>({
+    localhosts<span class="pl-k">:</span> {
+        set <span class="pl-k">:</span> {
+            options<span class="pl-k">:</span> {
+                rules<span class="pl-k">:</span> [{
+                    ip<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>127.0.0.1<span class="pl-pds">'</span></span>,
+                    hostname<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>qun.qq.com<span class="pl-pds">'</span></span>,
+                    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>set<span class="pl-pds">'</span></span>
+                }, {
+                    ip<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>127.0.0.1<span class="pl-pds">'</span></span>,
+                    hostname<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>find.qq.com<span class="pl-pds">'</span></span>,
+                    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>set<span class="pl-pds">'</span></span>
+                }, {
+                    domain<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>baidu.com<span class="pl-pds">'</span></span>,    <span class="pl-c">// point domain "A" to domain "B"</span>
+                    hostname<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>find.qq.com<span class="pl-pds">'</span></span>,
+                    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>set<span class="pl-pds">'</span></span>
+                }]
+            }
+        },
+        remove <span class="pl-k">:</span> {
+            options<span class="pl-k">:</span> {
+                rules<span class="pl-k">:</span> [{
+                    ip<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>127.0.0.1<span class="pl-pds">'</span></span>,
+                    hostname<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>qun.qq.com<span class="pl-pds">'</span></span>,
+                    type<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>remove<span class="pl-pds">'</span></span>
+                }]
+            }
+        }
+    },
+});
 
 
-<span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">'serve'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">grunt</span><span class="p">.</span><span class="nx">task</span><span class="p">.</span><span class="nx">run</span><span class="p">([</span>
-        <span class="s1">'concurrent:server'</span><span class="p">,</span>
-        <span class="s2">"localhosts:set"</span><span class="p">,</span>
-        <span class="s1">'connect:livereload'</span><span class="p">,</span>
-        <span class="s1">'open:server'</span><span class="p">,</span>
-        <span class="s1">'watch'</span>
-    <span class="p">]);</span>
-<span class="p">});</span>
+<span class="pl-smi">grunt</span>.<span class="pl-en">registerTask</span>(<span class="pl-s"><span class="pl-pds">'</span>serve<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> (<span class="pl-smi">target</span>) {
+    <span class="pl-smi">grunt</span>.<span class="pl-smi">task</span>.<span class="pl-en">run</span>([
+        <span class="pl-s"><span class="pl-pds">'</span>concurrent:server<span class="pl-pds">'</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>localhosts:set<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">'</span>connect:livereload<span class="pl-pds">'</span></span>,
+        <span class="pl-s"><span class="pl-pds">'</span>open:server<span class="pl-pds">'</span></span>,
+        <span class="pl-s"><span class="pl-pds">'</span>watch<span class="pl-pds">'</span></span>
+    ]);
+});
 
-<span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">'build'</span><span class="p">,</span> <span class="p">[</span>
-        <span class="s1">'localhosts:remove'</span><span class="p">,</span>    <span class="c1">// clear previously set localhosts</span>
-        <span class="s1">'.......'</span>    <span class="c1">// content removed for brevity</span>
-<span class="p">]);</span>
-</pre></div>
+<span class="pl-smi">grunt</span>.<span class="pl-en">registerTask</span>(<span class="pl-s"><span class="pl-pds">'</span>build<span class="pl-pds">'</span></span>, [
+        <span class="pl-s"><span class="pl-pds">'</span>localhosts:remove<span class="pl-pds">'</span></span>,    <span class="pl-c">// clear previously set localhosts</span>
+        <span class="pl-s"><span class="pl-pds">'</span>.......<span class="pl-pds">'</span></span>    <span class="pl-c">// content removed for brevity</span>
+]);</pre></div>
 
 <h2>
-<a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
+<a id="release-history" class="anchor" href="#release-history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release History</h2>
 
 <ul>
+<li>2016-01-28   v0.1.0   handle writing file permission denied</li>
+<li>2016-01-27   v0.0.9   Add dns lookup support. thx <a href="https://github.com/Filip" class="user-mention">@Filip</a> Spiridonov</li>
 <li>2014-10-24   v0.0.8   Add multiple rules support. thx <a href="https://github.com/NameFILIP" class="user-mention">@NameFILIP</a>
 </li>
 <li>2012-04-10   v0.0.7   Add manufacturer info.</li>
@@ -153,25 +141,31 @@ Default: `empty array'</p>
 </ul>
 
 <h2>
-<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h2>
 
 <p>grunt-localhosts is an open-source project by <a href="http://www.tencent.com/en-us/">Tencent</a> which builds on top of <a href="https://nodejs.org">Node.js</a>.</p>
 
 <h2>
-<a name="used-by-people-within-join-us" class="anchor" href="#used-by-people-within-join-us"><span class="octicon octicon-link"></span></a>Used by people within <a href="https://github.com/materliu/grunt-localhosts/issues/">(JOIN US)</a>
+<a id="used-by-people-within-join-us" class="anchor" href="#used-by-people-within-join-us" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Used by people within <a href="https://github.com/materliu/grunt-localhosts/issues/">(JOIN US)</a>
 </h2>
 
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Tencent_Logo.svg/200px-Tencent_Logo.svg.png" alt="Tencent"></p>
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Tencent_Logo.svg/200px-Tencent_Logo.svg.png" alt="Tencent">
+<img src="https://avatars2.githubusercontent.com/u/1309360?v=3&amp;s=200" alt="Xiaomi"></p>
 
 <hr>
 
 <p>Task submitted by <a href="http://materliu.github.com">materliu</a></p>
 
 <p><em>This file was generated on Fri Apr 4 2014 22:38:50.</em></p>
-      </section>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/materliu/grunt-localhosts">Grunt-localhosts</a> is maintained by <a href="https://github.com/materliu">materliu</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
