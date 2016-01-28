@@ -143,9 +143,13 @@ module.exports = function (grunt) {
         var total = 0;
         var checkComplete = function () {
           if (total >= options.rules.length) {
-            writeFile(lines, function () {
-              grunt.log.writeln(HOSTS + ' is refreshed');
-              done();
+            writeFile(lines, function (err) {
+              if (err) {
+                grunt.fail.warn(err);
+              } else {
+                grunt.log.writeln(HOSTS + ' is refreshed');
+                done();
+              }
             });
           }
         };

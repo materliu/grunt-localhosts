@@ -1,4 +1,4 @@
-# grunt-localhosts v0.0.9 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/grunt-localhosts) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/grunt-localhosts)
+# grunt-localhosts v0.1.0 [![NPM Version](http://img.shields.io/npm/v/hostile.svg)](https://npmjs.org/package/grunt-localhosts) [![NPM](http://img.shields.io/npm/dm/hostile.svg)](https://npmjs.org/package/grunt-localhosts)
 
 > Change your local machine hosts.
 
@@ -108,6 +108,7 @@ grunt.registerTask('build', [
 ```
 
 ## Release History
+ * 2016-01-28   v0.1.0   handle writing file permission denied
  * 2016-01-27   v0.0.9   Add dns lookup support. thx @Filip Spiridonov
  * 2014-10-24   v0.0.8   Add multiple rules support. thx @NameFILIP
  * 2012-04-10   v0.0.7   Add manufacturer info.
