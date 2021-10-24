@@ -40,7 +40,6 @@
     "mocha": "~1.15.1"
   },
   "dependencies": {
-    "dns": "^0.2.2",
     "split": "*",
     "through": "*"
   },
